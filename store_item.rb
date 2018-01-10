@@ -1,13 +1,13 @@
 
-shoe_1 = {:price => 200, :color => "black", :type => "boot"}
-shoe_2 = {:price => 300, :color => "red", :type => "wedge"}
-shoe_3 = {price: 400, color: "green", type: "heel"}
+item_1 = {:price => 200, :color => "black", :type => "boot"}
+item_2 = {:price => 300, :color => "red", :type => "wedge"}
+item_3 = {price: 400, color: "green", type: "heel"}
 
 # Exercise: Rewrite your store items using a class instead of a hash.
 # a) Choose which attributes should have “reader” methods and which attributes should have “writer” methods.
 # b) Create an instance from your store item class. Use puts statements to print the 3 attributes individually to the terminal.
 
-class Shoe
+class Item
   attr_reader :price, :color, :type
   attr_writer :new_color 
 
@@ -42,10 +42,22 @@ class Shoe
   end 
 end 
 
-shoe_1 = Shoe.new(
+class Food < Item  
+
+  def initialize(input_options)
+    super(input_options)
+    @items = input_options[:items]
+    @shelf_life = shelf_life
+  end 
+
+end 
+
+end 
+
+item_1 = Item.new(
                   price: 200, 
                   color: "black", 
                   type: "boot"
                   )
 
-shoe_1.price 
+item_1.price 
